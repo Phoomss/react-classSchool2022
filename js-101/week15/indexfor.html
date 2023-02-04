@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        // var n = prompt("Enter number :")
+        // for(i=0; i<=n;i+=2){
+        //     document.write(i + "<br>")
+        // }
+        // document.write("------------------------------------------<br>")
+        // var n = prompt("Enter number :")
+        // for(i=n;i>=0;i-=2){
+        //     document.write(i + "<br>")
+        // }
+
+        var n = prompt("Enter number :")
+        document.write("Number: " + n + "<br>")
+        for(i=1;i<=n;i++){
+            for(k=1;k<=i;k++){
+                document.write(n-(k-1) + " ")
+            }
+            document.write("<br>")
+        }
+        document.write("------------------------------------------<br>")
+        for(i=n;i>=1;i--){
+            for(k=1;k<=i;k++){
+                document.write(n-(k-1) + " ")
+            }
+            document.write("<br>")
+        }
+
+    </script>
+</body>
+</html>

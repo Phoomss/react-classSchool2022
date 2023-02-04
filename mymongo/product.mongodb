@@ -1,0 +1,17 @@
+use("shop-Phoom");
+db.products.updateMany({
+    "name" : "สมุดปกอ่อน แพ็ค 10"
+},
+{
+    $set : {"price" : 50},
+    $set : {"name" : "มีด"}
+});
+db.products.find();
+
+db.products.deleteMany({
+        "name" : "มีด"
+});
+db.products.deleteMany({
+    price : { $lt : 200}
+});
+db.products.find();

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var student = {
+            "id": "65309010004",
+            "name": "Narongsak",
+            "address": "Nakhon Patom",
+            "age": 19,
+            "tel":{
+                "home": "3131331",
+                "mobie": "54545"
+            },
+            "hobbies": ["Sleep", "playgrame"],
+            "coursess": [
+            {"name": "web Desin and Divalowmet",
+                "grade": "A"
+            },
+            {"name": "database",
+                "grade": "A"
+            },
+            {"name": "data stu",
+                "grade": "A"
+            },
+            ]
+        }
+
+        document.write("ID :" + student.id  + "<br>")
+        document.write("Name :" + student['name'] + "<br>" )
+        document.write("Address :" + student.address  + "<br>")
+        document.write("Age :" + student.age + "<br>")
+        document.write("Tel : " + student.tel.home+ "<br>")
+        document.write("Hobbies : <br>")
+        student.hobbies.map((h) =>{
+            document.write(h + "<br>")
+        })
+
+        document.write("Courses: ")
+        document.write("<ul>")
+        student.coursess.map((cour) =>{
+            document.write(`<li>${cour.name} (${cour.grade}) </li>` + "<br>")
+        })
+        document.write("</ul>")
+
+        
+
+    </script>
+</body>
+</html>

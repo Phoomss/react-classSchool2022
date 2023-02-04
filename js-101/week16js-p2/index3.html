@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Name: <span id="span-name"></span>
+    </h1>
+    <hr>
+    <p>
+        <strong>Age : </strong><span id="spn-age"></span>
+    </p>
+    <p>
+        <strong>Tel : </strong><span id="spn-tel"></span>
+    </p>
+
+
+    <div></div>
+    <div class="redtext"></div>
+    <div class="redtext"></div>
+
+
+    <script>
+
+        // var name = prompt("Enter your name: ")
+        // var Age = prompt("Enter your age: ")
+        // var Tel = prompt("Enter your tel: ")
+
+        // var h1 =document.getElementById('span-name')
+        // h1.innerText = name
+        // var p =document.getElementById('spn-age')
+        // p.innerText = Age
+        // var p =document.getElementById('spn-tel')
+        // p.innerText = Tel
+
+        var div = document.querySelectorAll("div")
+        div.forEach((d)=>{
+            console.log(d)
+            d.innerHTML = "test text"
+        })
+
+        var rt = document.querySelectorAll(".redtext")
+        rt.forEach((r)=>{
+            // r.innerHTML = "<span style='color: red'>test</span>"
+            r.style.color = 'green'
+            r.style.backgroundColor = 'yellow'
+            r.style.textAlign = 'center'
+            r.style.border = '1px solid black'
+            r.style.marginTop ="10px"
+            r.style.padding='20px'
+            r.style.borderRadius="50px"
+        })
+    </script>
+</body>
+</html>

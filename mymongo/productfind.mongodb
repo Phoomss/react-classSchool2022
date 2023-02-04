@@ -1,0 +1,28 @@
+use("shop-Phoom");
+
+//SELECT * FROM products WHERE color='black';
+db.products.find({
+    "color": "green"
+});
+
+// WHERE price <= 100
+// $lte <= (less than or equal)
+// $lt <,  $gt >, $gte >=,  $nq !=
+db.products.find(
+    {
+        price: { $gt : 100 }
+    }
+);
+
+db.products.find(
+    {
+        name : /สมุด/
+    }
+);
+
+//ให้หา product ที่มีราคาน้อยกว่า 10
+db.products.find({
+    price:{ $lt : 10}
+});
+
+db.products.find();

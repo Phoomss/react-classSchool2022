@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Name: <input type="text" id="txt-name"><br>
+    job: <select name="job" id="ddl-job">
+        <option value="1">นักเรียน</option>
+        <option value="2">นักกิน</option>
+        <option value="3">นักหัว</option>
+        <option value="4">นักนา</option>
+    </select>
+
+    <p id="p-job"></p>
+    <button onclick="readjob()">ดึงข้อมูล</button>
+
+
+    <div style="margin-top: 20px;">
+        เพิ่มชึ้นทีละ
+        <select name="num" id="in-num">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+        <button onclick="decrease()">-</button> 
+        <input type="text" id="qty" value="1" style="text-align:center"> 
+        <button onclick="increase()" id="plus">+</button>
+    </div>
+    
+
+    
+    
+    
+    <script>
+        var txtName = document.getElementById('txt-name')
+        txtName.value="Inset input"
+
+        function readjob(){
+            var jobId = document.getElementById("ddl-job")
+
+            document.getElementById('p-job').innerHTML = jobId.options[jobId.selectedIndex].text
+        }
+/*--------------------------------------------------------------------------------------*/
+        function increase(){
+            var pb = document.getElementById("plus")
+            var txt_qty = document.getElementById('qty')
+            var num = document.getElementById('in-num').value*1
+            var qty = txt_qty.value*1
+            qty+=num
+            txt_qty.value = qty
+        }
+        function decrease(){
+            var txt_qty = document.getElementById('qty')
+            var num = document.getElementById('in-num').value*1
+            var qty = txt_qty.value*1
+            qty-=num
+            txt_qty.value = qty
+        }
+/*-------------------------------------------------*/
+
+    </script>
+</body>
+</html>

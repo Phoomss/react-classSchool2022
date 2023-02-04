@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        var students = ["Da", "Do", "fe", "fa", "fo"]
+        
+        students.push("Pattarawat")
+        for(i=0;i<students.length;i++){
+            document.write(students[i] + "<br>")
+
+        }
+        document.write("=================================================================<br>")
+        //map ค่าใน ARRAY
+        students.map(function(s){
+            var name = s.toUpperCase()
+            document.write(name + "<br>")
+        })
+
+        //arrow funtion
+
+        students.map((s)=>{
+            var name = s.toLowerCase()
+            document.write(name + "<br>")
+        })
+
+        document.write("=================================================================<br>")
+        document.write("=================================================================<br>")
+
+        var score = [55, 27, 39, 42, 15]
+        score.map((sc)=>{
+            if(sc>=30){
+                document.write(sc + " ==> " +"Passed" + "<br>")
+            }else{
+                document.write(sc + " ==> " + "Not Passed" + "<br>")
+            }
+            
+        })
+    </script>
+</body>
+</html>

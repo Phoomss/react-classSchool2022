@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=., initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="mydiv">
+       <p>Random Number = <span id="num"></span></p>
+    </div>
+   
+    <button onclick="addRed()">Add Red</button>
+    <button onclick="addGreen()">Add Green</button>
+    <button onclick="addRandom()">Add Random</button>
+
+    <script>
+        
+        function addRed(){
+            var div = document.getElementById('mydiv')
+            div.classList.add('red')
+            div.classList.remove('green')
+        }
+
+        function addGreen(){
+            var div = document.getElementById('mydiv')
+            div.classList.add('green')
+            div.classList.remove('red')
+        }
+
+        function addRandom(){
+            var div = document.getElementById('mydiv')
+            var x = Math.floor(Math.addRandom()*5)+1
+            document.getElementById('num').innerHTML = x
+            if(x==1){
+                div.classList.add('green')
+                div.classList.remove('red')
+                div.classList.remove('yellow')
+                div.classList.remove('gray')
+            }
+            else if(x==2){
+                div.classList.remove('green')
+                div.classList.remove('red')
+                div.classList.add('yellow')
+                div.classList.remove('gray')
+            }
+            else if(x==3){
+                div.classList.remove('green')
+                div.classList.add('red')
+                div.classList.remove('yellow')
+                div.classList.remove('gray')
+            }else{
+                div.classList.remove('green')
+                div.classList.remove('red')
+                div.classList.remove('yellow')
+                div.classList.add('gray')
+            }
+            
+        }
+
+    </script>
+</body>
+</html>

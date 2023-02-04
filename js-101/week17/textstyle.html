@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bold{
+            font-weight: bold;
+        }
+        .italic{
+            font-style: italic;
+        }
+        .underline{text-decoration: underline;}
+    </style>
+</head>
+<body>
+    <h1>Text Styling</h1>
+    <hr>
+    <div id="myText">
+        Test Text
+    </div>
+
+    <button onclick="setBold()">Bold</button>
+    <button onclick="setItalic()">Italic</button>
+    <button onclick="setUnderline()">Underline</button>
+    <button onclick="setreset()">Reset</button>
+
+    <script>
+        
+        function setBold(){
+            var myText = document.getElementById('myText')
+            myText.classList.toggle('bold')
+        }
+        function setItalic(){
+            var myText = document.getElementById('myText')
+            myText.classList.toggle('italic')
+        }
+        function setUnderline(){
+            var myText = document.getElementById('myText')
+            myText.classList.toggle('underline')
+        }
+    </script>
+</body>
+</html>

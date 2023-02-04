@@ -1,0 +1,24 @@
+use("shop-Phoom");
+
+db.products.insertOne({
+    "name" : "สมุดปกอ่อน แพ็ค 10",
+    "price" : 20,
+    "clor" : ["orange", "green"]
+});
+
+db.products.insertOne({
+    "name" : "ปลา แพ็ค 10",
+    "price" : 500,
+});
+
+db.products.insertOne({
+    "name" : "น้ำเปล่า แพ็ค 10",
+    "price" : 150,
+});
+
+db.products.insertOne({
+    "name" : "ดินสอ 1 อัน",
+    "price" : 5,
+});
+
+db.products.find();

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script>
+        // alert("hello word")
+        // console.log("hello word")
+        // document.write("hello word")
+        // var x = "5";
+        // alert((x+1)*2)
+        // var name = prompt("Enter your name")
+        // var age =  prompt("Enter your age")
+        // var home = prompt("Enter your hometown")
+        // document.write("Hellp," + name + age +" years old, " + " from " + home)
+
+        // //string template ````````````  backtick
+        // var text = `Hello, ${name} from ${home} ${age}`
+        // alert(text)
+        
+        // var age = prompt("Enter age")*1
+        // if (age<18){
+        //     alert("You are too young to enter.")
+        // }else if(age>80){
+        //     alert("You are too old to enter.")
+        // }else{
+        //     alert("welcome")
+        // }
+
+        
+       // var scoe = prompt("Enter Scoe  : ")
+        var midterm = prompt("Enter scoe midterm :")*1
+        var final = prompt("Enter scoe final :")*1
+        var scoe = midterm + final
+        var grade=""
+        if (scoe>=80){
+           grade = 4
+        }else if (scoe>=75){
+            grade = 3.5
+        }else if(scoe>=70){
+            grade = 3
+        }else if (scoe>=65){
+            grade = 2.5
+        }else if(scoe>=60){
+            grade = 2
+        }else if (scoe>=55){
+            grade = 1.5
+        }else if(scoe>=50){
+            grade = 1
+        }else{
+            grade = 0
+        }
+        alert(` score: ${scoe} Grade: ${grade}`)
+
+    </script>
+</body>
+</html>

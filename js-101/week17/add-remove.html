@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .redBox{
+            padding: 20px;
+            border: 1px solid red;
+            color: red;
+        }
+        .greenBox{
+            padding: 20px;
+            border: 1px solid green;
+            color: green;
+        }
+        .blueBox{
+            color: blue;
+            border: 1px solid blue;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add Elements</h1>
+    <hr>
+    <div class="container" id="parentBox">
+        <div class="redBox" onclick="removeBox(this)">
+            Box
+        </div>
+        <div class="greenBox" onclick="removeBox(this)">
+            Box
+        </div>
+        <div class="greenBox" onclick="removeBox(this)">
+            Box
+        </div>
+    </div>
+    <div style="margin-top: 20px;">
+        <button onclick="addBox('redBox')">Add Red</button>
+        <button onclick="addBox('greenBox')">Add Green</button>
+        <button onclick="addBox('blueBox')">Add Blue</button>
+    </div>    
+    <script>
+
+        function removeBox(element){
+            element.remove()
+
+        }
+        function addBox(className){
+            var div = document.createElement('div')
+            div.classList.add(className)
+            div.innerHTML="Box"
+            div.setAttribute('onclick','removeBox(this)')
+
+            console.log(div)
+
+            var parentBox = document.getElementById('parentBox')
+            parentBox.appendChild(div)
+            
+        }
+    </script>
+</body>
+</html>
