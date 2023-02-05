@@ -16,13 +16,22 @@ const addReview = (id, review) => {
     console.log(review)
     return http.patch(`/product/${id}`, review)
   }
-  
-  
+
+const update = (id, product) =>{
+    return http.put(`/product/${id}`,product)
+}
+
+const deleteProduct = (id) =>{
+    return http.delete(`/product/${id}`)
+}
+
 const ProductService = {
     getAll,
     get,
     create,
-    addReview
+    addReview,
+    update,
+    deleteProduct
 }
 
 export default ProductService

@@ -8,10 +8,10 @@ const Product = () => {
   const [products, setProduct] = useState([]);
 
   useEffect(()=>{
-    fetchProducts()
+    fetchProduct()
   },[])
 
-  const fetchProducts = () =>{
+  const fetchProduct = () =>{
     ProductService.getAll()
     .then((res)=>{
       setProduct(res.data.data)
@@ -57,6 +57,12 @@ const ProductList = (props) => {
             </NavLink>{' '}
             <NavLink to={'/product/' + props.product._id} className="btn btn-success ">
               Buy Now
+            </NavLink>
+            <NavLink to={'/product/edit/' + props.product._id} className="btn btn-warning  ">
+              Edit
+            </NavLink>
+            <NavLink to={'/product/delete/' + props.product._id} className="btn btn-danger  ">
+              Delete
             </NavLink>
           </div>
         </div>
