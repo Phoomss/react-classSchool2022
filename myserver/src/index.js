@@ -5,7 +5,8 @@ const port = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const productRouter = require('./routes/product.route')
+const productRouter = require('./routes/product.route');
+const userRouter = require('./routes/user.route')
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -14,18 +15,20 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require("./db.js")(app);
 
 app.get("/", (req, res) => {
-  res.send("Hello! Node.js");
+  res.send("Hello! คนสวย");
 });
 
 app.get("/about", (req, res) => {
-    res.send("About us");
+  res.send("About us");
 });
 
 app.get("/contact", (req, res) => {
-    res.send("Contact");
+  res.send("Contact us");
 });
 
 app.use("/product", productRouter);
+
+app.use("/user",userRouter);
 
 app.listen(port, () => {
   console.log("Starting node.js at port " + port);

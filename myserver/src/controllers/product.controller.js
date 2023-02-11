@@ -1,47 +1,81 @@
-const Product = require('../models/product.model')
-exports.getProduct = (req, res)=>{
+const Product = require('../models/product.model');
+exports.getProducts = (req, res)=>{
     Product.find().exec((err, result) => {
         res.status(200).json({
-            msg: "Search Ok",
-            data: result,
+            msg: "Search OK",
+            data: result
         });
-    });
+     });
 };
 
 exports.getProductById = (req, res)=>{
     Product.findById(req.params.id).exec((err, result) => {
         res.status(200).json({
-            msg: "Search Ok",
-            data: result,
+            msg: "Search OK",
+            data: result
         });
-    });
-}
+     });
+};
 
-exports.createProduct = async (req, res)=>{
-   try {
+exports.createProduct = async (req, res) =>{
+    try {
     let product = new Product({
-        name: req.body.name,
+    // latop
+        brand: req.body.brand,
+        model: req.body.model,
+        display: req.body.display,
+        processor: req.body.processor,
+        graphics: req.body.graphics,
+        memory: req.body.memory,
+        storage: req.body.storage,
+        weight: req.body.weight,
         price: req.body.price,
-        unit_in_stock: req.body.unit_in_stock
+        unit_in_stock: req.body.unit_in_stock,
+    // mouse 
+        mousebrand: req.body.mousebrand,
+        mousemodel: req.body.mousemodel,
+        sensor: req.body.sensor,
+        resolution: req.body.resolution,
+        batterylife: req.body.batterylife,
+        mouseweight: req.body.mouseweight,
+        mouseprice: req.body.mouseprice,
+        mouseunit_in_stock: req.body.mouseunit_in_stock
     });
-    let createdProduct = await product.save();
+    let createProduct = await product.save();
     res.status(200).json({
-        msg: "Add a product complete",
-        data: createdProduct
+        msg: "Add a product complete.",
+        data: createProduct
     });
-   } catch (error) {
+    } catch (error) {
     console.log(error);
     res.status(500).json({
         msg: error
-    });
-   }
-}
+    });    
+    }
+};
 
-exports.updateProduct =(req, res)=>{
+exports.updateProduct = (req, res) =>{
     let product = {  //ข้อมูลใหม่
-        name: req.body.name,
+        // latop
+        brand: req.body.brand,
+        model: req.body.model,
+        display: req.body.display,
+        processor: req.body.processor,
+        graphics: req.body.graphics,
+        memory: req.body.memory,
+        storage: req.body.storage,
+        weight: req.body.weight,
         price: req.body.price,
-        unit_in_stock: req.body.unit_in_stock
+        unit_in_stock: req.body.unit_in_stock,
+    // mouse 
+        mousebrand: req.body.mousebrand,
+        mousemodel: req.body.mousemodel,
+        sensor: req.body.sensor,
+        resolution: req.body.resolution,
+        batterylife: req.body.batterylife,
+        mouseweight: req.body.mouseweight,
+        mouseprice: req.body.mouseprice,
+        mouseunit_in_stock: req.body.mouseunit_in_stock
     };
     Product.findByIdAndUpdate(req.params.id, product)  //ระบุทั้ง id ที่ต้องการแก้ และข้อมูลใหม่
         .exec((err, result) => {
@@ -54,9 +88,9 @@ exports.updateProduct =(req, res)=>{
                     });
                 });
         });
-}
+};
 
-exports.addProductReview = async (req, res) =>{
+exports.addProductReview = async (req, res) => {
     let reviewData = {
         $push: {
             reviews: {
@@ -78,16 +112,16 @@ exports.addProductReview = async (req, res) =>{
         });
 };
 
-exports.deleteProductById = async(req, res)=>{
+exports.deleteProductById = async (req, res) => {
     Product.findByIdAndDelete(req.params.id)
         .exec((err, result) => {
             res.status(200).json({
                 msg: "Delete OK"
-            });
         });
+     });
 };
 
-exports.getProductsByName = async (req, res)=>{
+exports.getProductsByName = async (req, res) => {
     Product.find({
         name: new RegExp(req.params.name)
     }) // { name: /xxxx/}
@@ -99,3 +133,6 @@ exports.getProductsByName = async (req, res)=>{
     });
 };
 
+exports.getProductsByPrice = async (req, res) => {
+    
+}; 
