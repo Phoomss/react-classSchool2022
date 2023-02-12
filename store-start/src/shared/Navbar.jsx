@@ -30,6 +30,11 @@ const Navbar = () => {
                 Product
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/login">
+                Login
+              </NavLink>
+            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
